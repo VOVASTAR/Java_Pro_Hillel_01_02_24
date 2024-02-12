@@ -29,15 +29,28 @@ public class Employee {
         return position;
     }
 
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public short getAge() {
         return age;
     }
+
 }
