@@ -2,7 +2,7 @@ package homework.hw5;
 
 public class Cat extends Animal {
 
-    public static final double MAX_RUNNING_LENGTH = 200;
+    private static final double MAX_RUNNING_LENGTH = 200;
 
     public Cat(String name, Observable... observables) {
         super(name, observables);

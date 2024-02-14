@@ -2,8 +2,8 @@ package homework.hw5;
 
 public class Dog extends Animal {
 
-    public static final double MAX_RUNNING_LENGTH = 500;
-    public static final double MAX_SWIMMING_LENGTH = 10;
+    private static final double MAX_RUNNING_LENGTH = 500;
+    private static final double MAX_SWIMMING_LENGTH = 10;
 
     public Dog(String name, Observable... observables) {
         super(name, observables);
