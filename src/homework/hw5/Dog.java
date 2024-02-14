@@ -11,11 +11,8 @@ public class Dog extends Animal {
 
     @Override
     public void run(double obstructedLength) {
-        if (obstructedLength > 0 && obstructedLength <= MAX_RUNNING_LENGTH) {
-            System.out.println(getName() + " run " + obstructedLength + " meters.");
-        } else {
-            System.out.println(getName() + " can`t run " + obstructedLength + " meters.");
-        }
+        maxRunningLength = MAX_RUNNING_LENGTH;
+        super.run(obstructedLength);
     }
 
     @Override
