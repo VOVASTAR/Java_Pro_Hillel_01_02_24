@@ -1,12 +1,12 @@
-package homework.hw.competition;
+package homework.hw6.competition;
 
-import homework.hw.competition.obstruction.Obstruction;
-import homework.hw.competition.obstruction.Treadmill;
-import homework.hw.competition.obstruction.Wall;
-import homework.hw.competition.participants.Cat;
-import homework.hw.competition.participants.Human;
-import homework.hw.competition.participants.Participant;
-import homework.hw.competition.participants.Robot;
+import homework.hw6.competition.obstruction.Obstruction;
+import homework.hw6.competition.obstruction.Treadmill;
+import homework.hw6.competition.obstruction.Wall;
+import homework.hw6.competition.participants.Cat;
+import homework.hw6.competition.participants.Human;
+import homework.hw6.competition.participants.Participant;
+import homework.hw6.competition.participants.Robot;
 
 public class MainCompetition {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package homework.hw.figures;
+package homework.hw6.figures;
 
 public interface GeometricFigures {
 

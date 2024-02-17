@@ -1,4 +1,4 @@
-package homework.hw.competition.participants;
+package homework.hw6.competition.participants;
 
 public class Human extends Participant {
 

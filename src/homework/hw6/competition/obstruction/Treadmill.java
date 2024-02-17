@@ -1,6 +1,6 @@
-package homework.hw.competition.obstruction;
+package homework.hw6.competition.obstruction;
 
-import homework.hw.competition.participants.Participant;
+import homework.hw6.competition.participants.Participant;
 
 public class Treadmill implements Obstruction {
 
