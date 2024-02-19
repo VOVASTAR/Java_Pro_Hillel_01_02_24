@@ -29,6 +29,9 @@ public class Phonebook {
                 nameContacts.add(note);
             }
         }
+        if (nameContacts.isEmpty()) {
+            nameContacts = null;
+        }
         return nameContacts;
     }
 
