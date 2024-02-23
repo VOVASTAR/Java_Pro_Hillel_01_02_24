@@ -15,7 +15,7 @@ public class Wall implements Obstruction {
         if (!participant.isJump(obstructedHeight)) {
             System.out.println("Учасник " + participant.getName() + " не пройшов перешкоду " + getClass().getSimpleName()
                     + " на дистанції " + obstructedHeight + ". Пройдено " + participant.getMaxJumpingHeight());
-            participant.setFinishCompetition(false);
+            participant.setIsFailedCompetition(true);
             return;
         }
         System.out.println("Учасник " + participant.getName() + " пройшов перешкоду " + getClass().getSimpleName()

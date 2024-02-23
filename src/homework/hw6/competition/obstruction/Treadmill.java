@@ -15,7 +15,7 @@ public class Treadmill implements Obstruction {
         if (!participant.isRun(obstructedLength)) {
             System.out.println("Учасник " + participant.getName() + " не пройшов перешкоду " + getClass().getSimpleName()
                     + " на дистанції " + obstructedLength + ". Пройдено " + participant.getMaxRunningDistance());
-            participant.setFinishCompetition(false);
+            participant.setIsFailedCompetition(true);
             return;
         }
         System.out.println("Учасник " + participant.getName() + " пройшов перешкоду " + getClass().getSimpleName()

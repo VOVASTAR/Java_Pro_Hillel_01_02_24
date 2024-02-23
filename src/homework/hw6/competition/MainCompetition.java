@@ -27,7 +27,7 @@ public class MainCompetition {
 
         for (Participant participant : participants) {
             for (Obstruction obstruction : obstructions) {
-                if (!participant.getIsFinishCompetition()) break;
+                if (participant.getIsFailedCompetition()) break;
                 obstruction.overcome(participant);
             }
         }

@@ -5,7 +5,7 @@ public abstract class Participant {
     private final double MAX_RUNNING_DISTANCE;
     private final double MAX_JUMPING_HEIGHT;
     private final String NAME;
-    private boolean isFinishCompetition = true;
+    private boolean isFailedCompetition = false;
 
     public Participant(String name, double runningDistance, double jumpingHeight) {
         this.NAME = name;
@@ -33,11 +33,11 @@ public abstract class Participant {
         return MAX_JUMPING_HEIGHT;
     }
 
-    public boolean getIsFinishCompetition() {
-        return isFinishCompetition;
+    public boolean getIsFailedCompetition() {
+        return isFailedCompetition;
     }
 
-    public void setFinishCompetition(boolean finishCompetition) {
-        isFinishCompetition = finishCompetition;
+    public void setIsFailedCompetition(boolean failedCompetition) {
+        isFailedCompetition = failedCompetition;
     }
 }
