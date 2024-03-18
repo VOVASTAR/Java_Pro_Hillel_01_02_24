@@ -24,9 +24,9 @@ public class MainException {
         ArrayValueCalculator calculator = new ArrayValueCalculator();
 
         try {
-            calculator.doCalc(validArray);
-            calculator.doCalc(invalidSizeArray);
-            calculator.doCalc(invalidDataArray);
+            System.out.println(calculator.doCalc(validArray));
+            System.out.println(calculator.doCalc(invalidSizeArray));
+            System.out.println(calculator.doCalc(invalidDataArray));
         } catch (IllegalArgumentException exception) {
             System.out.println(exception.getMessage());
         }

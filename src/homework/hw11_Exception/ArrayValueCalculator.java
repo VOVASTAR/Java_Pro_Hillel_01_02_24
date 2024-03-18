@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ArrayValueCalculator {
 
-    public void doCalc(String[][] array) {
+    public int doCalc(String[][] array) {
         int sum = 0;
 
         for (int i = 0; i < array.length; i++) {
@@ -21,11 +21,11 @@ public class ArrayValueCalculator {
                 }
             }
         }
-        System.out.println(sum);
+        return sum;
     }
 
     //---------- additional with streams
-    public void doCalcStream(String[][] array) {
+    public int doCalcStream(String[][] array) {
         if (array.length != 4 && array[0].length != array.length)
             throw new ArraySizeException("Illegal array size, should be 4 х 4");
         int sum = 0;
@@ -37,6 +37,6 @@ public class ArrayValueCalculator {
         } catch (NumberFormatException exception) {
             throw new ArrayDataException("NumberFormatException");
         }
-        System.out.println(sum);
+        return sum;
     }
 }
