@@ -10,8 +10,8 @@ public class Shop {
 
     public List<Product> filterByTypeAndPrice(String type, double price) {
         return shopItems.stream()
-                .filter(product -> product.getType().equals(type)
-                        && product.getPrice() >= price)
+                .filter(product -> product.getType().equals(type))
+                .filter(product -> product.getPrice() >= price)
                 .toList();
     }
 
@@ -22,8 +22,8 @@ public class Shop {
         }
 
         return shopItemWithDiscount.stream()
-                .filter(product -> product.getType().equals(type)
-                        && product.isDiscount())
+                .filter(product -> product.getType().equals(type))
+                .filter(Product::isDiscount)
                 .map(product -> {
                     product.setPrice(product.getPrice() * (1 - discount / 100));
                     return product;
@@ -47,10 +47,10 @@ public class Shop {
 
     public double totalFilteredProductAmount(LocalDate dateFrom, String type, double price) {
         return shopItems.stream()
-                .filter(product -> product.getDate().isAfter(dateFrom)
-                        && product.getType().equals(type)
-                        && product.getPrice() < price)
+                .filter(product -> product.getDate().isAfter(dateFrom))
+                .filter(product -> product.getType().equals(type))
                 .map(Product::getPrice)
+                .filter(productPrice -> productPrice < price)
                 .reduce(0.0, Double::sum);
     }
 
