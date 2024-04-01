@@ -1,4 +1,8 @@
-package homework.hw12;
+package homework.hw12.task1To5.filters;
+
+import homework.hw12.task1To5.ChainOfFilters;
+import homework.hw12.task1To5.Filter;
+import homework.hw12.task1To5.Request;
 
 import java.util.function.Predicate;
 
@@ -12,10 +16,10 @@ public class FilterContainsStringInUri implements Filter {
 
     @Override
     public void doFilter(Request request, ChainOfFilters chainOfFilters) {
-
-//        https://www.baeldung.com/
         Predicate<String> predicate = str -> request.getAddress().toString().contains(str);
-        System.out.println(predicate.test(string));
-//        return predicate.test(str);
+        if (!predicate.test(string)) {
+            System.out.println("400 Bad Request: " + this.getClass().getSimpleName());
+            chainOfFilters.setValidFilterStatus(false);
+        }
     }
 }

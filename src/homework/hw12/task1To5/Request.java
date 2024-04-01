@@ -1,4 +1,4 @@
-package homework.hw12;
+package homework.hw12.task1To5;
 
 import java.net.URI;
 import java.util.List;
