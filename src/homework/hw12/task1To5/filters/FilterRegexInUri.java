@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 
 public class FilterRegexInUri implements Filter {
 
-    Pattern pattern = Pattern.compile("[a-z:.\\/]+");
+    Pattern pattern = Pattern.compile("[a-z:./]+");
 
     @Override
     public void doFilter(Request request, ChainOfFilters chainOfFilters) {
