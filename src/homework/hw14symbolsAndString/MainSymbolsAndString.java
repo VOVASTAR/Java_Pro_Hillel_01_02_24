@@ -26,12 +26,8 @@ class MainSymbolsAndString {
     }
 
     private StringBuilder stringReverse(String string) {
-        char[] charArray = string.toCharArray();
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = charArray.length - 1; i >= 0; i--) {
-            stringBuilder.append(charArray[i]);
-        }
-        return stringBuilder;
+        StringBuilder stringBuilder = new StringBuilder(string);
+        return stringBuilder.reverse();
     }
 
     private boolean isPalindrome(String string) {

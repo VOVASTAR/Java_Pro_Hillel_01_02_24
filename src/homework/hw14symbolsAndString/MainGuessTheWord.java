@@ -10,7 +10,7 @@ class MainGuessTheWord {
 
     public static void main(String[] args) {
         MainGuessTheWord mainGuessTheWord = new MainGuessTheWord();
-        String secretWord = mainGuessTheWord.secretWord(mainGuessTheWord.words);
+        String secretWord = mainGuessTheWord.secretWord();
         mainGuessTheWord.tryToGuessWord(secretWord);
     }
 
@@ -19,9 +19,9 @@ class MainGuessTheWord {
             "garlic", "grape", "melon", "leak", "kiwi", "mango", "mushroom", "nut", "olive", " pea", "peanut",
             "pear", "pepper", "pineapple", "pumpkin", "potato"};
 
-    private String secretWord(String[] strings) {
+    private String secretWord() {
         Random random = new Random();
-        return strings[random.nextInt(strings.length)];
+        return this.words[random.nextInt(this.words.length)];
     }
 
     private void tryToGuessWord(String secretWord) {
