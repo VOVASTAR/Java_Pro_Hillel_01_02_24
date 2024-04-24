@@ -17,7 +17,7 @@ public class ListOfCars implements HighOrderFunction {
         return cars;
     }
 
-    public String transformFromHex(String str) {
+    private String transformFromHex(String str) {
         if (str.matches("[A-Fa-f\\d]+")) {
             str = Arrays.stream(str.split("(?<=\\G..)"))
                     .map(s -> Character.toString(Integer.parseInt(s, 16)))
@@ -26,19 +26,19 @@ public class ListOfCars implements HighOrderFunction {
         return str;
     }
 
+    private String addUnderlineToOddNumber(String s) {
+        if (s.length() % 2 == 1) {
+            s += "_";
+        }
+        return s;
+    }
 
     @Override
     public List<String> modify() {
         return cars.stream()
                 .map(this::transformFromHex)
                 .map(s -> new StringBuilder(s).reverse().toString())
-                .map(s -> {
-                    if (s.length() % 2 == 1) {
-                        s += "_";
-                    }
-                    return s;
-                })
+                .map(this::addUnderlineToOddNumber)
                 .toList();
     }
-
 }
