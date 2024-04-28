@@ -1,0 +1,4 @@
+FILE : src/homework/hw15_IO_Files/io_Folder
+LEVEL : DEBUG
+MAX_SIZE : 7000
+FORMAT : [%s][%s] Message from config: %s %n
