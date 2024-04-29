@@ -17,13 +17,16 @@ public class MainSorting {
                 .toArray();
         int[] arrayMerge = Arrays.copyOf(arrayQuick, arrayQuick.length);
 
+        System.out.println(Arrays.toString(arrayQuick));
         long startTimeQuick = System.currentTimeMillis();
         quickSort.quickSort(arrayQuick, 0, arrayQuick.length - 1);
+        System.out.println(Arrays.toString(arrayQuick));
         long endTimeQuick = System.currentTimeMillis();
         System.out.println("running time quick sort: " + (endTimeQuick - startTimeQuick) + " ms");
 
         long startTimeMerge = System.currentTimeMillis();
         mergeSort.mergeSort(arrayMerge);
+        System.out.println(Arrays.toString(arrayMerge));
         long endTimeMerge = System.currentTimeMillis();
         System.out.println("running time merge sort: " + (endTimeMerge - startTimeMerge) + " ms");
     }
