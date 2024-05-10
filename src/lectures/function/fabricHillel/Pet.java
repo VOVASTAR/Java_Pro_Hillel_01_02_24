@@ -1,8 +1,14 @@
 package lectures.function.fabricHillel;
 
- class Pet {
+class Pet {
 
     private String name;
+    private int age;
+
+    public Pet(int age, String name) {
+        this.name = name;
+        this.age = age;
+    }
 
     public String getName() {
         return name;
@@ -17,13 +23,6 @@ package lectures.function.fabricHillel;
     }
 
     public void setAge(int age) {
-        this.age = age;
-    }
-
-    private int age;
-
-    public Pet(int age, String name) {
-        this.name = name;
         this.age = age;
     }
 
