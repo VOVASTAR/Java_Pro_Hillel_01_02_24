@@ -1,16 +1,13 @@
-package homework.hw_20_multiThreading;
+package homework.hw_20_multiThreading.Semaphore;
 
 import java.util.Random;
-import java.util.concurrent.Semaphore;
 
 public class Cars extends Thread {
     private double fuelAmountToFill;
-    private Semaphore activeStation;
     private PetrolStation station;
     private Random random = new Random();
 
-    public Cars(Semaphore semaphore, PetrolStation station, double refill) {
-        this.activeStation = semaphore;
+    public Cars(PetrolStation station, double refill) {
         this.station = station;
         this.fuelAmountToFill = refill;
     }
@@ -18,8 +15,8 @@ public class Cars extends Thread {
     @Override
     public void run() {
         try {
-            activeStation.acquire();
-            int pumpingDuration = random.nextInt(7001) + 3000;
+            station.getSemaphore().acquire();
+            int pumpingDuration = random.nextInt(1001) + 3000;
             sleep(pumpingDuration);
             station.getLocker().lock();
             try {
@@ -31,7 +28,7 @@ public class Cars extends Thread {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } finally {
-            activeStation.release();
+            station.getSemaphore().release();
         }
     }
 }
