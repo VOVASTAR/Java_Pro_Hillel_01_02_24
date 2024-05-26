@@ -1,29 +1,51 @@
 package homework.hw18_graph;
 
-public class SimpleBinaryTree {
+public class SimpleBinaryTree<T extends Number> {
 
-    NodeTree root;
+    private NodeTree<T> root;
+    private double sum;
 
     public SimpleBinaryTree() {
         this.root = null;
     }
 
-    public void add(Integer value) {
-        recursionSearchingChild(value, root);
+    public NodeTree<T> getRoot() {
+        return this.root;
     }
 
-    private NodeTree recursionSearchingChild(Integer value, NodeTree node) {
+    public void add(T value) {
+        root = recursionSearchingChild(value, root);
+    }
+
+    private NodeTree<T> recursionSearchingChild(T value, NodeTree<T> node) {
 
         if (node == null) {
-            node = new NodeTree(value);
+            return new NodeTree<>(value);
         }
 
-        if (value < node.value) {
-            node.leftNode = recursionSearchingChild(value, node);
-        } else if (value > node.value) {
-            node.rightNode = recursionSearchingChild(value, node);
+        if (value.doubleValue() < node.getValue().doubleValue()) {
+            node.setLeftNode(recursionSearchingChild(value, node.getLeftNode()));
+        } else if (value.doubleValue() > node.getValue().doubleValue()) {
+            node.setRightNode(recursionSearchingChild(value, node.getRightNode()));
         }
         return node;
     }
 
+    public double iterate(NodeTree<T> root) {
+        sum += root.getValue().doubleValue();
+        if (root.getLeftNode() != null) {
+            iterate(root.getLeftNode());
+        }
+        if (root.getRightNode() != null) {
+            iterate(root.getRightNode());
+        }
+        return sum;
+    }
+
+    @Override
+    public String toString() {
+        return "SimpleBinaryTree{" +
+                "root=" + root +
+                '}';
+    }
 }
