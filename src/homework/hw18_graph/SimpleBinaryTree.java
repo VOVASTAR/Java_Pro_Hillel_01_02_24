@@ -32,13 +32,24 @@ public class SimpleBinaryTree<T extends Number> {
     }
 
     public double iterate(NodeTree<T> root) {
-        sum += root.getValue().doubleValue();
-        if (root.getLeftNode() != null) {
-            iterate(root.getLeftNode());
+        sum = 0;
+        return iterate(root, sum);
+    }
+
+    public double iterate(NodeTree<T> root, double sumTree) {
+        try {
+            sumTree = root.getValue().doubleValue();
+            sum += sumTree;
+            if (root.getLeftNode() != null) {
+                iterate(root.getLeftNode(), sumTree);
+            }
+            if (root.getRightNode() != null) {
+                iterate(root.getRightNode(), sumTree);
+            }
+        } catch (NullPointerException exception) {
+            return 0;
         }
-        if (root.getRightNode() != null) {
-            iterate(root.getRightNode());
-        }
+
         return sum;
     }
 
