@@ -16,6 +16,7 @@ public class MainBinaryTree {
 
         System.out.println(simpleBinaryTree);
         NodeTree<Integer> root = simpleBinaryTree.getRoot();
+        System.out.println(simpleBinaryTree.iterate(null));
         System.out.println(simpleBinaryTree.iterate(root));
         System.out.println(simpleBinaryTree.iterate(root));
     }

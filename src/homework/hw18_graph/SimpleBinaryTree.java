@@ -1,5 +1,7 @@
 package homework.hw18_graph;
 
+import java.util.Objects;
+
 public class SimpleBinaryTree<T extends Number> {
 
     private NodeTree<T> root;
@@ -33,23 +35,21 @@ public class SimpleBinaryTree<T extends Number> {
 
     public double iterate(NodeTree<T> root) {
         sum = 0;
-        return iterate(root, sum);
+        if (!Objects.isNull(root)) {
+            return iterateRecursion(root);
+        } else {
+            return sum;
+        }
     }
 
-    public double iterate(NodeTree<T> root, double sumTree) {
-        try {
-            sumTree = root.getValue().doubleValue();
-            sum += sumTree;
-            if (root.getLeftNode() != null) {
-                iterate(root.getLeftNode(), sumTree);
-            }
-            if (root.getRightNode() != null) {
-                iterate(root.getRightNode(), sumTree);
-            }
-        } catch (NullPointerException exception) {
-            return 0;
+    public double iterateRecursion(NodeTree<T> root) {
+        sum += root.getValue().doubleValue();
+        if (root.getLeftNode() != null) {
+            iterateRecursion(root.getLeftNode());
         }
-
+        if (root.getRightNode() != null) {
+            iterateRecursion(root.getRightNode());
+        }
         return sum;
     }
 
