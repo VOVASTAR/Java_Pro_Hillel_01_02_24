@@ -5,6 +5,7 @@ out/
 .idea/
 *.iml
 .git
+target/
 
 ### Eclipse ###
 .apt_generated
