@@ -27,7 +27,7 @@ public class FileLoggerConfigurationLoaderImp implements FileLoggerConfiguration
                     case "LEVEL" -> this.level = configValue;
                     case "MAX_SIZE" -> this.maxSize = configValue;
                     case "FORMAT" -> this.format = configValue;
-                    default -> throw new ConfigurationLoaderException("Incorrect key in config" + firstWord);
+                    default -> throw new ConfigurationLoaderException("Incorrect key in config " + firstWord);
                 }
             }
         } catch (IOException e) {
