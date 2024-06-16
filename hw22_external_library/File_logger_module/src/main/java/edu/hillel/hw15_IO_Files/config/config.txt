@@ -1,0 +1,4 @@
+FILE : hw22_external_library/File_logger_module/src/main/java/edu/hillel/hw15_IO_Files/io_Folder
+LEVEL : INFO
+MAX_SIZE : 7000
+FORMAT : [%s][%s] Message from config: %s %n
