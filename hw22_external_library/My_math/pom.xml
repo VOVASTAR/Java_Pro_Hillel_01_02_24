@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>edu.hillel</groupId>
-        <artifactId>Java_Pro_Hillel_01_02_24</artifactId>
+        <artifactId>hw22_external_library</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>My_java_pro</artifactId>
+    <artifactId>My_math</artifactId>
     <packaging>jar</packaging>
 
-    <name>My_java_pro</name>
+    <name>My_math</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -18,11 +18,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>edu.hillel</groupId>
-            <artifactId>My_math</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
 
     </dependencies>
 </project>
